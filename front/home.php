@@ -23,7 +23,7 @@ $useTable1="personal";
              <td>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</td>
              <td><input type="text" name="name[]" value="<?=$r['name'];?>"></td> 
        <tr>
-             <td>連絡電話</td>
+             <td id="education">連絡電話</td>
              <td><input type="text" name="phone[]" value="<?=$r['phone'];?>"></td>
        </tr>
        <tr>
@@ -35,7 +35,7 @@ $useTable1="personal";
              <td><input type="text" name="birthday[]" value="<?=$r['birthday'];?>"></td>
        </tr>
        <tr>
-             <td>聯絡地址</td>
+             <td >聯絡地址</td>
              <td><input type="text" name="addr[]" value="<?=$r['addr'];?>"></td>
        </tr>
        <tr></tr>
@@ -57,7 +57,7 @@ $sql="SELECT * FROM `education` WHERE `sh` = 1";
 $eduData=$pdo->query($sql)->fetchAll();
 ?>
 
-<div id="education" style="width:100%; height:100%; margin:auto;">
+<div style="width:100%; height:100%; margin:auto;">
             <p class="t cent botli">學歷與進修</p>
 
   <form method="post" action="./api/edit.php">
@@ -93,8 +93,12 @@ $eduData=$pdo->query($sql)->fetchAll();
         <?php
         }
         ?>
-    </table>
-  </form>
+    </table >
+    <div  style="font-size: 1.2em; 
+           border:1px solid white; border-radius:3px; padding: 5px; 
+           float: right;"> <a href="index.php">top</a>
+    </div>
+  </form >
 </div>
 </div>
 
@@ -160,8 +164,13 @@ $workData=$pdo->query($sql)->fetchAll();
         }
         ?>
     </table>
+    <div id="arts" style="font-size: 1.2em; 
+           border:1px solid white; border-radius:3px; padding: 5px; 
+           float: right; top:20px;"> <a href="index.php">top</a>
+    </div>
   </form>
 </div>
+
 
 
 
@@ -173,7 +182,7 @@ $artsData=$pdo->query($sql)->fetchAll();
 $useTable="artsps";
 ?>
 
-<div id="arts" style="width:100%; height:100%; margin:auto;">
+<div  style="width:100%; height:100%; margin:auto;">
   <p class="t cent botli">作品集</p>
   
   <form method="post" action="./api/edit.php">
@@ -209,9 +218,14 @@ $useTable="artsps";
         }
         ?>
   </table>
+  <div  style="font-size: 1.2em; 
+           border:1px solid white; border-radius:3px; padding: 5px; 
+           float: right;"> <a href="index.php">top</a>
+  </div>
+  </form>  
 
-    <!--插入一個DIV用來放置分頁及頁碼
-    先暫時不要做這個-->
+    <!--先暫時不要做這個
+    插入一個DIV用來放置分頁及頁碼    -->
     <!-- <div class="cent">
     <php
         if(($p-1)>0){
@@ -227,24 +241,25 @@ $useTable="artsps";
     ?>
     </div> -->
 
+ 
+    </form> 
     
     <!-- AUTOBI PAGE -->
 
- 
 
 
 <div id="autobiAll" style="width:100%; height:100%; margin:auto;">
   <p class="t cent botli">自傳</p>  
-
-
-
-
-
-
-  </div>
-
 </div>
-<!-- containerXXL end -->
+
+
+<?php
+include_once "./admin/autobiAll.php";
+?>
+
+
+</div> <!-- containerXXL end -->
+
 
 
 

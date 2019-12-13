@@ -16,7 +16,7 @@
     <li><a href="?do=admin">登入帳號管理</a></li>    
 
 
-    <li><a href="./api/logout.php">登出</a></li>
+    <li><a href="./api/logout.php" style="border:1px solid white; border-color: white;">登出</a></li>
     
   
 

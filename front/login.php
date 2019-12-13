@@ -17,7 +17,16 @@ if(!empty($_POST['check'])){
       由於目前login.php的位置在front/之下，
       要回到上層，根目錄寫法..回到上層，再到admin.php頁面
       因admin.php在專案檔案夾的根目錄下，
-      寫法，不需要前面放點，直接寫page的名稱即可
+      寫法，不需要前面放點，直接寫page的名稱即可。      
+   
+      <!--刪除target="back"，ps欄位改成pw以符合資料表的欄位名
+      在本頁做action，所以action=本頁的網址，
+      action="login.php"或action="?"表示自己這張頁面，
+      但若要到別頁作執行(跳出的帳密視窗)，則需要改為?do=某頁面
+      這張front/login.php，在index.php(前台)設定會include(導入)，
+      在index.php有載明do...
+      -->
+
       */
       // echo "成功";
       to("admin.php");   
@@ -31,17 +40,19 @@ if(!empty($_POST['check'])){
 ?>
 
 <div class="di"  
-     style="height:540px; 
-            width:60%; 
+     style="height:1000px; 
+            width:100%; 
             margin:auto; 
+            background-color: black;
+            color: white;
             position:relative;"> 
             
 <form class="cent" method="post" action="?do=login"> 
 
-<p class="t cent botli">登入系統</p>
+<p class="t cent botli" >登入系統</p>
 
-  帳號 ： <input name="acc" autofocus="" type="text">
-  密碼 ： <input name="pw" type="password">
+  帳號 ： <input style="color: white;" name="acc" autofocus="" type="text">
+  密碼 ： <input style="color: white;" name="pw" type="password">
 
   <!--在submit中加上name欄位做為表單送出的識別值-->
   <input value="送出" name="check" type="submit">
@@ -51,14 +62,4 @@ if(!empty($_POST['check'])){
 </div>
 
 
-
-<!--正中央-->
-<!--刪除target="back"，ps欄位改成pw以符合資料表的欄位名
-在本頁做action，所以action=本頁的網址，
-action="login.php"或action="?"表示自己這張頁面，
-但若要到別頁作執行(跳出的帳密視窗)，則需要改為?do=某頁面
-
-這張front/login.php，在index.php(前台)設定會include(導入)，
-在index.php有載明do...
--->
 

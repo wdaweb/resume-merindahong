@@ -58,10 +58,16 @@ if(file_exists($path)){
 	}
 	
 
-// 導入自傳	
-include_once "./admin/autobiAll.php";
+
+
+
 
 ?>
+
+
+
+
+<!-- 為何在這裡導入自傳，login畫面也會有自傳? -->
 
 
 </body></html>
